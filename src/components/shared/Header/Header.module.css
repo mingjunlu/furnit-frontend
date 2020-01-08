@@ -1,0 +1,80 @@
+.section {
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.button {
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.buttonDisabled:hover {
+    cursor: not-allowed;
+}
+
+.menu {
+    width: 2.0rem;
+    position: relative;
+    top: 0.25rem;
+}
+
+.cancel {
+    width: 1.4rem;
+    position: relative;
+    top: 0.25rem;
+}
+
+.logoWrapper {
+    height: 44px;
+}
+
+.logo {
+    height: 44px;
+}
+
+.bag {
+    width: 2.2rem;
+}
+
+.nav {
+    min-height: 100vh;
+    max-width: 1024px;
+    margin: 0 auto;
+    background-color: white;
+    position: absolute;
+    top: calc(44px + 0.8rem * 2);
+    right: 0;
+    left: 0;
+}
+
+.navLinks {
+    padding: 2.2rem;
+}
+
+.navLink {
+    display: block;
+    color: rgb(153, 153, 153);
+    line-height: 44px;
+}
+
+.navLink:hover {
+    color: black;
+}
+
+.navHidden {
+    display: none;
+}

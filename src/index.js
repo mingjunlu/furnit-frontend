@@ -1,8 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import WebFont from 'webfontloader';
 import 'normalize.css/normalize.css';
-import './custom-reset.css';
-import './index.css';
-import App from './App';
+import './assets/styles/custom-reset.css';
+import './assets/styles/index.css';
+import App from './components/App';
+
+WebFont.load({
+    google: {
+        families: [
+            'Poppins:400',
+            'Playfair Display:400',
+        ],
+    },
+});
 
 ReactDOM.render(<App />, document.getElementById('root'));
