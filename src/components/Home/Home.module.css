@@ -1,10 +1,3 @@
-.mockContent {
-    max-width: 1024px;
-    margin: 0 auto;
-    padding: 2.0rem;
-}
-
-.paragraph {
-    font-size: 2.0rem;
-    line-height: 3.0;
+.section {
+    flex-grow: 1;
 }

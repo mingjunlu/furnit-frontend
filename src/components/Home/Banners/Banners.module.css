@@ -1,0 +1,42 @@
+.banners {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 2.0rem;
+    display: grid;
+    grid-gap: 2.0rem;
+}
+
+.banner {
+    display: block;
+}
+
+.img {
+    display: block;
+    width: 100%;
+}
+
+@media (min-width: 676px) {
+    .banners {
+        grid-gap: 1.2rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        "topLeft    topLeft     topRight"
+        "bottomLeft bottomRight bottomRight";
+    }
+    .img {
+        object-fit: cover;
+        height: 100%;
+    }
+    .topLeft {
+        grid-area: topLeft;
+    }
+    .topRight {
+        grid-area: topRight;
+    }
+    .bottomLeft {
+        grid-area: bottomLeft;
+    }
+    .bottomRight {
+        grid-area: bottomRight;
+    }
+}

@@ -9,7 +9,7 @@ import App from './components/App';
 WebFont.load({
     google: {
         families: [
-            'Poppins:400',
+            'Poppins:400,300',
             'Playfair Display:400',
         ],
     },

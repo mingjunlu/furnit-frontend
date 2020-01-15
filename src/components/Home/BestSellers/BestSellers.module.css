@@ -1,0 +1,44 @@
+.section {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 2.0rem;
+}
+
+.heading {
+    font-size: 2.4rem;
+    text-align: center;
+    font-weight: 300;
+    line-height: 4.0;
+}
+
+.bestSellers {
+    display: grid;
+    grid-gap: 2.0rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.link {
+    display: block;
+}
+
+.img {
+    display: block;
+    width: 100%;
+}
+
+.name {
+    font-size: 1.2rem;
+    margin-top: 0.8rem;
+}
+
+.price {
+    font-size: 1.2rem;
+    color: rgb(175, 175, 175);
+    margin-bottom: 0.4rem;
+}
+
+@media (min-width: 676px) {
+    .bestSellers {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
