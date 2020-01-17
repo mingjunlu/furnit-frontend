@@ -1,49 +1,45 @@
 import React, { useState } from 'react';
 import { ReactComponent as MenuIcon } from '../../../assets/icons/menu.svg';
 import { ReactComponent as CancelIcon } from '../../../assets/icons/cancel.svg';
-import { ReactComponent as Logo } from '../../../assets/icons/logo.svg';
+import { ReactComponent as LogoIcon } from '../../../assets/icons/logo.svg';
+import { ReactComponent as UserIcon } from '../../../assets/icons/user.svg';
 import { ReactComponent as BagIcon } from '../../../assets/icons/bag.svg';
+import Nav from './Nav/Nav';
+import MobileNav from './MobileNav/MobileNav';
 import styles from './Header.module.css';
 
 const Header = () => {
-    const [isNavVisible, setIsNavVisible] = useState(false);
-    const toggleNav = () => { setIsNavVisible((prevState) => !prevState); };
-    const HeaderLeftIcon = () => {
-        if (isNavVisible) {
-            return <CancelIcon className={styles.cancel} />;
-        }
-        return <MenuIcon className={styles.menu} />;
-    };
+    const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
+    const toggleNav = () => { setIsMobileNavVisible((prevState) => !prevState); };
+    const HeaderLeftIcon = () => (isMobileNavVisible
+        ? <CancelIcon className={styles.cancelIcon} />
+        : <MenuIcon className={styles.menuIcon} />
+    );
 
     return (
         <section className={styles.section}>
             <header className={styles.header}>
                 <button
                     type="button"
-                    className={styles.button}
+                    className={`${styles.button} ${styles.menu}`}
                     onClick={toggleNav}
                 >
                     <HeaderLeftIcon />
                 </button>
-                <a href="/" className={styles.logoWrapper} aria-label="Go to homepage">
-                    <Logo className={styles.logo} />
+                <Nav />
+                <a href="/" className={styles.logo} aria-label="Go to homepage">
+                    <LogoIcon className={styles.logoIcon} />
                 </a>
-                <button
-                    type="button"
-                    className={`${styles.button} ${styles.buttonDisabled}`}
-                    disabled
-                >
-                    <BagIcon className={styles.bag} />
-                </button>
+                <div className={styles.buttons}>
+                    <button disabled type="button" className={`${styles.button} ${styles.user}`}>
+                        <UserIcon className={styles.userIcon} />
+                    </button>
+                    <button disabled type="button" className={styles.button}>
+                        <BagIcon className={styles.bag} />
+                    </button>
+                </div>
             </header>
-            <nav className={isNavVisible ? styles.nav : styles.navHidden}>
-                <ul className={styles.navLinks}>
-                    <li><a href="/home" className={styles.navLink}>Home</a></li>
-                    <li><a href="/shop" className={styles.navLink}>Shop</a></li>
-                    <li><a href="/blog" className={styles.navLink}>Blog</a></li>
-                    <li><a href="/login" className={styles.navLink}>Login</a></li>
-                </ul>
-            </nav>
+            {isMobileNavVisible && <MobileNav />}
         </section>
     );
 };

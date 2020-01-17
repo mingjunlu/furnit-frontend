@@ -22,59 +22,55 @@
     outline: none;
 }
 
-.buttonDisabled:hover {
+.button:disabled:hover {
     cursor: not-allowed;
 }
 
-.menu {
+.menuIcon {
     width: 2.0rem;
     position: relative;
     top: 0.25rem;
 }
 
-.cancel {
+.cancelIcon {
     width: 1.4rem;
     position: relative;
     top: 0.25rem;
-}
-
-.logoWrapper {
-    height: 44px;
 }
 
 .logo {
     height: 44px;
 }
 
+.logoIcon {
+    height: 44px;
+}
+
+.user {
+    display: none;
+}
+
+.userIcon {
+    width: 2.2rem;
+    position: relative;
+    top: 0.1rem;
+}
+
 .bag {
     width: 2.2rem;
 }
 
-.nav {
-    min-height: 100vh;
-    background-color: white;
-    position: absolute;
-    top: calc(44px + 0.8rem * 2);
-    right: 0;
-    left: 0;
-}
+@media (min-width: 1024px) {
+    .menu {
+        display: none;
+    }
 
-.navLinks {
-    padding: 2.2rem;
-    max-width: 1024px;
-    margin: 0 auto;
-}
+    .buttons {
+        flex: 1;
+        text-align: right;
+    }
 
-.navLink {
-    display: block;
-    color: rgb(153, 153, 153);
-    line-height: 44px;
-}
-
-.navLink:hover {
-    color: black;
-}
-
-.navHidden {
-    display: none;
+    .user {
+        display: inline-block;
+    }
 }

@@ -1,0 +1,24 @@
+.nav {
+    min-height: 100vh;
+    background-color: white;
+    position: absolute;
+    top: calc(44px + 0.8rem * 2);
+    right: 0;
+    left: 0;
+}
+
+.navLinks {
+    padding: 2.2rem;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.navLink {
+    display: block;
+    color: rgb(153, 153, 153);
+    line-height: 44px;
+}
+
+.navLink:hover {
+    color: black;
+}
