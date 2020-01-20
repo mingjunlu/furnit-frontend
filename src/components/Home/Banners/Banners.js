@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Banners.module.css';
 
 const Banners = () => {
@@ -32,11 +33,11 @@ const Banners = () => {
     return (
         <section className={styles.banners}>
             {banners.map((banner) => (
-                <a href={banner.href} className={banner.className} key={banner.src}>
+                <Link to={banner.href} className={banner.className} key={banner.src}>
                     <picture>
                         <img src={banner.src} className={styles.img} alt={banner.alt} />
                     </picture>
-                </a>
+                </Link>
             ))}
         </section>
     );

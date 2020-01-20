@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useFetch from '../../../hooks/useFetch';
 import styles from './NewArrivals.module.css';
 
@@ -19,7 +20,7 @@ const NewArrivals = () => {
             <div className={styles.newArrivals}>
                 {newArrivals.map((product) => (
                     <article key={product._id}>
-                        <a href={`/shop/${product.category}/${product._id}`} className={styles.link}>
+                        <Link to={`/shop/${product.category}/${product._id}`} className={styles.link}>
                             <picture>
                                 <img
                                     src={product.images[0]}
@@ -27,7 +28,7 @@ const NewArrivals = () => {
                                     alt={product.name}
                                 />
                             </picture>
-                        </a>
+                        </Link>
                         <h3 className={styles.name}>{product.name}</h3>
                         <p className={styles.price}>{`$${product.price.toLocaleString()}`}</p>
                     </article>

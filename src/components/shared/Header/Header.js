@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ReactComponent as MenuIcon } from '../../../assets/icons/menu.svg';
 import { ReactComponent as CancelIcon } from '../../../assets/icons/cancel.svg';
 import { ReactComponent as LogoIcon } from '../../../assets/icons/logo.svg';
@@ -27,9 +28,9 @@ const Header = () => {
                     <HeaderLeftIcon />
                 </button>
                 <Nav />
-                <a href="/" className={styles.logo} aria-label="Go to homepage">
+                <Link to="/" className={styles.logo} aria-label="Go to homepage">
                     <LogoIcon className={styles.logoIcon} />
-                </a>
+                </Link>
                 <div className={styles.buttons}>
                     <button disabled type="button" className={`${styles.button} ${styles.user}`}>
                         <UserIcon className={styles.userIcon} />
