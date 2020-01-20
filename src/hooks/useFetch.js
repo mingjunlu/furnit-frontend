@@ -4,6 +4,8 @@ const useFetch = (url, options, defaultState = null) => {
     const [result, setResult] = useState(defaultState);
 
     useEffect(() => {
+        let isMounted = true;
+
         const fetchData = async () => {
             let fetchedData;
 
@@ -18,11 +20,14 @@ const useFetch = (url, options, defaultState = null) => {
                 setResult(error);
             }
 
-            if (fetchedData) {
+            if (isMounted && fetchedData) {
                 setResult(fetchedData);
             }
         };
         fetchData();
+
+        // Prevent setting state after unmounted
+        return () => { isMounted = false; };
     }, [url, options]);
 
     return result;
