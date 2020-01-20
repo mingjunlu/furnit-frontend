@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Header from './shared/Header/Header';
+import Header from './Header/Header';
 import Home from './Home/Home';
-import Footer from './shared/Footer/Footer';
+import NotFound from './NotFound/NotFound';
+import Footer from './Footer/Footer';
 
 const App = () => (
     <Router>
@@ -10,6 +11,9 @@ const App = () => (
         <Switch>
             <Route exact path="/">
                 <Home />
+            </Route>
+            <Route>
+                <NotFound />
             </Route>
         </Switch>
         <Footer />
