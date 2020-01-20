@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useFetch from '../../../hooks/useFetch';
+import useFetch from '../../hooks/useFetch';
 import styles from './BestSellers.module.css';
 
 const BestSellers = () => {

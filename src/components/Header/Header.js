@@ -5,8 +5,8 @@ import { ReactComponent as CancelIcon } from '../../assets/icons/cancel.svg';
 import { ReactComponent as LogoIcon } from '../../assets/icons/logo.svg';
 import { ReactComponent as UserIcon } from '../../assets/icons/user.svg';
 import { ReactComponent as BagIcon } from '../../assets/icons/bag.svg';
-import Nav from './Nav/Nav';
-import MobileNav from './MobileNav/MobileNav';
+import Nav from '../Nav/Nav';
+import MobileNav from '../MobileNav/MobileNav';
 import styles from './Header.module.css';
 
 const Header = () => {

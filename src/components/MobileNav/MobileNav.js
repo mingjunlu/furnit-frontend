@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import useScrollLock from '../../../hooks/useScrollLock';
+import useScrollLock from '../../hooks/useScrollLock';
 import styles from './MobileNav.module.css';
 
 const MobileNav = ({ toggleNav }) => {

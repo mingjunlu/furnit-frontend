@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as NotFoundIcon } from '../../assets/icons/404.svg';
-import styles from './NotFound.module.css';
+import { ReactComponent as Icon } from '../../assets/icons/404.svg';
+import styles from './NotFoundPage.module.css';
 
-const NotFound = () => (
+const NotFoundPage = () => (
     <section className={styles.section}>
         <article className={styles.container}>
             <picture className={styles.iconWrapper}>
-                <NotFoundIcon className={styles.icon} />
+                <Icon className={styles.icon} />
             </picture>
             <h2 className={styles.heading}>Page Not Found</h2>
             <p className={styles.message}>
@@ -22,4 +22,4 @@ const NotFound = () => (
     </section>
 );
 
-export default NotFound;
+export default NotFoundPage;
