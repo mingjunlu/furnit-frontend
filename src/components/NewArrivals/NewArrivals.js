@@ -17,10 +17,10 @@ const NewArrivals = () => {
     return (
         <section className={styles.section}>
             <h2 className={styles.heading}>New Arrivals</h2>
-            <div className={styles.newArrivals}>
+            <div className={styles.products}>
                 {newArrivals.map((product) => (
                     <article key={product._id}>
-                        <Link to={`/shop/${product.category}/${product._id}`} className={styles.link}>
+                        <Link to={`/products/${product._id}`} className={styles.link}>
                             <picture>
                                 <img
                                     src={product.images[0]}

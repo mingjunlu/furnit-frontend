@@ -24,6 +24,10 @@
     color: black;
 }
 
+.active {
+    color: black;
+}
+
 @media (min-width: 1024px) {
     .nav {
         display: block;

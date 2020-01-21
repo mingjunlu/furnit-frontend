@@ -11,7 +11,7 @@
     line-height: 4.0;
 }
 
-.newArrivals {
+.products {
     display: grid;
     grid-gap: 2.0rem;
     grid-template-columns: repeat(2, 1fr);
@@ -38,7 +38,7 @@
 }
 
 @media (min-width: 676px) {
-    .newArrivals {
+    .products {
         grid-template-columns: repeat(4, 1fr);
     }
 }

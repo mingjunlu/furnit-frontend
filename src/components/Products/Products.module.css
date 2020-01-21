@@ -12,6 +12,7 @@
 }
 
 .products {
+    margin-top: 4.0rem;
     display: grid;
     grid-gap: 2.0rem;
     grid-template-columns: repeat(2, 1fr);
@@ -38,6 +39,10 @@
 }
 
 @media (min-width: 676px) {
+    .heading {
+        line-height: 8.0;
+    }
+
     .products {
         grid-template-columns: repeat(4, 1fr);
     }

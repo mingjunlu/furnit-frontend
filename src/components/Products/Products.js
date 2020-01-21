@@ -1,24 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
-import styles from './BestSellers.module.css';
+import styles from './Products.module.css';
 
-const BestSellers = () => {
-    const bestSellers = useFetch('/api/products?sort=salesVolume&limit=8', undefined, []);
+const Products = () => {
+    const products = useFetch('/api/products', undefined, []);
 
-    if (bestSellers instanceof Error) {
+    if (products instanceof Error) {
         return (
             <section className={styles.section}>
-                <h2>Cannot get best-sellers</h2>
+                <h2>Cannot get products</h2>
             </section>
         );
     }
 
     return (
         <section className={styles.section}>
-            <h2 className={styles.heading}>Best-Sellers</h2>
+            <h2 className={styles.heading}>Products</h2>
             <div className={styles.products}>
-                {bestSellers.map((product) => (
+                {products.map((product) => (
                     <article key={product._id}>
                         <Link to={`/products/${product._id}`} className={styles.link}>
                             <picture>
@@ -38,4 +38,4 @@ const BestSellers = () => {
     );
 };
 
-export default BestSellers;
+export default Products;
