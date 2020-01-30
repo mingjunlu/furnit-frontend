@@ -1,0 +1,84 @@
+.buttons {
+    display: none;
+}
+
+.button {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+    outline: none;
+    opacity: 0.4;
+    width: 50px;
+    height: 50px;
+}
+
+.highlighted {
+    opacity: 1;
+}
+
+.thumbnail {
+    display: block;
+    width: 100%;
+}
+
+.picture {
+    display: block;
+    position: relative;
+}
+
+.arrow {
+    display: block;
+    outline: none;
+    min-width: 44px;
+    min-height: 44px;
+    opacity: 0.8;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-46%);
+}
+
+.arrowLeft {
+    left: 0.4rem;
+}
+
+.arrowRight {
+    right: 0.4rem;
+}
+
+.arrowIcon {
+    width: 2.0rem;
+    margin: 0 auto;
+    display: block;
+    fill: rgb(153, 153, 153);
+}
+
+.arrow:disabled:hover {
+    cursor: not-allowed;
+}
+
+.arrow:disabled > .arrowIcon {
+    opacity: 0.4;
+}
+
+.img {
+    display: block;
+    width: 100%;
+}
+
+@media (min-width: 676px) {
+    .buttons {
+        align-self: flex-start;
+        display: inline-flex;
+        flex-direction: column;
+    }
+
+    .picture {
+        display: block;
+        max-width: 480px;
+        padding: 0 2.0rem;
+        margin-right: auto;
+    }
+
+    .arrow {
+        display: none;
+    }
+}

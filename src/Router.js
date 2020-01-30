@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import HomePage from './pages/HomePage/HomePage';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
+import ProductPage from './pages/ProductPage/ProductPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 const Router = () => (
@@ -17,6 +18,9 @@ const Router = () => (
             </Route>
             <Route exact path="/products">
                 <ProductsPage />
+            </Route>
+            <Route exact path="/products/:id">
+                <ProductPage />
             </Route>
             <Route>
                 <NotFoundPage />

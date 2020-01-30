@@ -1,0 +1,47 @@
+.container {
+    color: rgb(45, 45 ,45);
+    font-size: 1.4rem;
+}
+
+.button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 44px;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.title {
+    font-size: 2.0rem;
+    font-weight: 300;
+}
+
+.icon {
+    width: 1.2rem;
+}
+
+.content {
+    display: none;
+}
+
+@media (min-width: 676px) {
+    .container {
+        margin-top: 4.0rem;
+    }
+
+    .button:hover {
+        cursor: default;
+    }
+
+    .icon {
+        display: none;
+    }
+
+    .content {
+        display: block;
+    }
+}

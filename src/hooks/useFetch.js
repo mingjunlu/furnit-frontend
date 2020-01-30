@@ -13,7 +13,9 @@ const useFetch = (url, options, defaultState = null) => {
                 const response = await fetch(url, options);
                 const { success, message, data } = await response.json();
                 if (!success) {
-                    throw new Error(message);
+                    const customError = new Error(message);
+                    customError.code = response.status;
+                    throw customError;
                 }
                 fetchedData = data;
             } catch (error) {

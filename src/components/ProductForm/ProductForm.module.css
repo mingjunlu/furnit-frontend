@@ -1,0 +1,83 @@
+.container {
+    margin-top: 2.0rem;
+    color: rgb(45, 45 ,45);
+}
+
+.name {
+    font-size: 2.0rem;
+}
+
+.price {
+    font-size: 2.8rem;
+}
+
+.abstract {
+    font-size: 1.4rem;
+    padding: 4.0rem 0;
+}
+
+.quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label {
+    font-size: 2.0rem;
+    font-weight: 300;
+}
+
+.controls {
+    min-height: 44px;
+    border: 1px solid rgb(45, 45 ,45);
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+.control {
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 2.4rem;
+    font-weight: 300;
+}
+
+.control:disabled {
+    color: rgb(153, 153, 153);
+}
+
+.control:disabled:hover {
+    cursor: not-allowed;
+}
+
+.quantityText {
+    display: inline-block;
+    text-align: center;
+    min-width: 44px;
+    padding: 0 0.8rem;
+}
+
+.submit {
+    display: block;
+    margin-top: 2.4rem;
+    width: 100%;
+    min-height: 44px;
+    color: white;
+    background-color: rgb(45, 45 ,45);
+    user-select: none;
+}
+
+.submit:active {
+    background-color: rgb(75, 75, 75);
+}
+
+.submit:focus {
+    outline: none;
+}
+
+@media (min-width: 676px) {
+    .container {
+        margin-top: 0;
+        max-width: 360px;
+    }
+}

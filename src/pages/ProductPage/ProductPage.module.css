@@ -1,0 +1,17 @@
+.section {
+    flex-grow: 1;
+}
+
+.container {
+    max-width: 1024px;
+    padding: 2.0rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 676px) {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

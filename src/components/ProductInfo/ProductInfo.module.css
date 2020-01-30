@@ -1,0 +1,12 @@
+.section {
+    margin-top: 2.0rem;
+}
+
+.description {
+    margin-bottom: 2.0rem;
+}
+
+.features {
+    list-style-type: disc;
+    padding-left: 2.0rem;
+}
