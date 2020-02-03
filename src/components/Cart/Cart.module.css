@@ -1,0 +1,92 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(45, 45, 45, 0.7);
+    z-index: 2;
+}
+
+.container {
+    background-color: white;
+    max-width: 82vw;
+    width: 360px;
+    height: 100vh;
+    margin-left: auto;
+    padding-bottom: calc(75px + 44px + 44px);
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2.0rem;
+    flex-shrink: 0;
+    position: sticky;
+}
+
+.heading {
+    font-weight: 300;
+}
+
+.cancel {
+    min-width: 44px;
+    min-height: 44px;
+    outline: none;
+    position: relative;
+    left: 1.2rem;
+}
+
+.cancelIcon {
+    width: 1.6rem;
+    height: 1.6rem;
+    position: relative;
+    top: 0.2rem;
+}
+
+.items {
+    flex-grow: 1;
+    overflow: auto;
+    padding: 2.0rem;
+}
+
+.footer {
+    max-width: 82vw;
+    width: 360px;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    background-color: white;
+    padding: 2.0rem 2.0rem;
+}
+
+.subtotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 44px;
+}
+
+.price {
+    color: rgb(205, 0, 0);
+}
+
+.submit {
+    display: block;
+    width: 100%;
+    min-height: 44px;
+    color: white;
+    background-color: rgb(45, 45 ,45);
+    user-select: none;
+}
+
+.submit:active {
+    background-color: rgb(75, 75, 75);
+}
+
+.submit:focus {
+    outline: none;
+}

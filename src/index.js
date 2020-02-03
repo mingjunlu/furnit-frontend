@@ -4,7 +4,7 @@ import WebFont from 'webfontloader';
 import 'normalize.css/normalize.css';
 import './assets/styles/custom-reset.css';
 import './assets/styles/index.css';
-import Router from './Router';
+import App from './App';
 
 WebFont.load({
     google: {
@@ -15,4 +15,4 @@ WebFont.load({
     },
 });
 
-ReactDOM.render(<Router />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));

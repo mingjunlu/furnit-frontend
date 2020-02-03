@@ -2,15 +2,21 @@ import { useLayoutEffect } from 'react';
 
 const useScrollLock = () => {
     useLayoutEffect(() => {
-        // Reserve original overflow value
-        const { overflow: originalValue } = window.getComputedStyle(document.body);
+        // Reserve original style values
+        const { body } = document;
+        const hadInlineStyle = !!body.getAttribute('style');
+        const { overflow: overflowValue } = window.getComputedStyle(body);
 
         // Prevent scrolling on mount
-        document.body.style.overflow = 'hidden';
+        body.style.overflow = 'hidden';
 
+        // Enable scrolling on unmount
         return () => {
-            // Enable scrolling on unmount
-            document.body.style.overflow = originalValue;
+            if (!hadInlineStyle) {
+                body.removeAttribute('style');
+            } else {
+                body.style.overflow = overflowValue;
+            }
         };
     }, []);
 };

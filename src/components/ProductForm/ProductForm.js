@@ -2,7 +2,15 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductForm.module.css';
 
-const ProductForm = ({ product }) => {
+const ProductForm = (props) => {
+    const {
+        product,
+        cartItems,
+        setCartItems,
+        setIsCartVisible,
+    } = props;
+
+    const isInCart = cartItems.find((item) => (item._id === product._id));
     const [minimum, maximum] = [1, 10];
     const [quantity, setQuantity] = useState(minimum);
     const hasReachedMinimum = (quantity === minimum);
@@ -20,6 +28,18 @@ const ProductForm = ({ product }) => {
     };
     const addToCart = (event) => {
         event.preventDefault();
+        if (!isInCart) {
+            const newCartItem = {
+                _id: product._id,
+                name: product.name,
+                price: product.price,
+                image: product.images[0],
+                quantity,
+            };
+            setCartItems((prevState) => [...prevState, newCartItem]); // Update cart
+            setIsCartVisible(true); // Show cart
+            setQuantity(minimum); // Reset quantity
+        }
     };
 
     return (
@@ -32,7 +52,7 @@ const ProductForm = ({ product }) => {
                 <div className={styles.controls}>
                     <button
                         type="button"
-                        disabled={hasReachedMinimum}
+                        disabled={isInCart || hasReachedMinimum}
                         onClick={decreaseQuantity}
                         className={styles.control}
                     >
@@ -41,7 +61,7 @@ const ProductForm = ({ product }) => {
                     <span className={styles.quantityText}>{quantity}</span>
                     <button
                         type="button"
-                        disabled={hasReachedMaximum}
+                        disabled={isInCart || hasReachedMaximum}
                         onClick={increaseQuantity}
                         className={styles.control}
                     >
@@ -49,7 +69,14 @@ const ProductForm = ({ product }) => {
                     </button>
                 </div>
             </div>
-            <button type="submit" onTouchStart={null} className={styles.submit}>Add to Cart</button>
+            <button
+                type="submit"
+                disabled={isInCart}
+                onTouchStart={null}
+                className={styles.submit}
+            >
+                {isInCart ? 'Already in Cart' : 'Add to Cart'}
+            </button>
         </form>
     );
 };
@@ -72,6 +99,15 @@ ProductForm.propTypes = {
         releasedAt: PropTypes.number,
         salesVolume: PropTypes.number,
     }).isRequired,
+    cartItems: PropTypes.arrayOf(PropTypes.exact({
+        _id: PropTypes.string,
+        name: PropTypes.string,
+        price: PropTypes.number,
+        image: PropTypes.string,
+        quantity: PropTypes.number,
+    })).isRequired,
+    setCartItems: PropTypes.func.isRequired,
+    setIsCartVisible: PropTypes.func.isRequired,
 };
 
 export default ProductForm;

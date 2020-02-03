@@ -5,7 +5,7 @@ import useScrollLock from '../../hooks/useScrollLock';
 import styles from './MobileNav.module.css';
 
 const MobileNav = ({ toggleNav }) => {
-    useScrollLock();
+    useScrollLock(); // Prevent scrolling
     const links = [
         { to: '/', text: 'Home' },
         { to: '/products', text: 'Products' },
@@ -13,6 +13,7 @@ const MobileNav = ({ toggleNav }) => {
         { to: '/news', text: 'News' },
         { to: '/login', text: 'Login' },
     ];
+
     return (
         <nav className={styles.nav}>
             <ul className={styles.navLinks}>

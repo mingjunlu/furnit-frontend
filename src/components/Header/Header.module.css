@@ -58,7 +58,26 @@
 }
 
 .bag {
+    position: relative;
+}
+
+.bagIcon {
     width: 2.2rem;
+}
+
+.count {
+    display: inline-block;
+    font-size: 1.0rem;
+    line-height: 2.0rem;
+    border-radius: 50%;
+    width: 2.0rem;
+    height: 2.0rem;
+    transform: scale(0.75);
+    color: white;
+    background-color: rgb(205, 0, 0);
+    position: absolute;
+    right: 0.2rem;
+    bottom: 0.4rem;
 }
 
 @media (min-width: 1024px) {

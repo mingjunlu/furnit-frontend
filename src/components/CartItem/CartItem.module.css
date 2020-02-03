@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.picture {
+    display: block;
+    width: 6.0rem;
+    height: 6.0rem;
+}
+
+.img {
+    display: block;
+    width: 100%;
+}
+
+.info {
+    margin-left: 1.0rem;
+}
+
+.name {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    color: rgb(45, 45, 45);
+}
+
+.quantity {
+    color: rgb(153, 153, 153);
+    font-size: 1.2rem;
+    position: relative;
+    top: 0.4rem;
+}
+
+.price {
+    color: rgb(205, 0, 0);
+    font-size: 1.2rem;
+}
+
+.button {
+    min-width: 44px;
+    min-height: 44px;
+    outline: none;
+    align-self: flex-start;
+    position: relative;
+    bottom: 1.0rem;
+    left: 1.2rem;
+    margin-left: auto;
+}
+
+.icon {
+    width: 1.4rem;
+}

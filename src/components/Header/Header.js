@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { ReactComponent as MenuIcon } from '../../assets/icons/menu.svg';
 import { ReactComponent as CancelIcon } from '../../assets/icons/cancel.svg';
@@ -9,7 +10,10 @@ import Nav from '../Nav/Nav';
 import MobileNav from '../MobileNav/MobileNav';
 import styles from './Header.module.css';
 
-const Header = () => {
+const Header = ({ cartItemsLength, setIsCartVisible }) => {
+    const hasItems = (cartItemsLength > 0);
+    const showCart = () => { setIsCartVisible(true); };
+
     const [isMobileNavVisible, setIsMobileNavVisible] = useState(false);
     const toggleNav = (isVisible) => {
         const isUndefined = (isVisible === undefined);
@@ -20,6 +24,7 @@ const Header = () => {
         }
         return () => { setIsMobileNavVisible(isVisible); };
     };
+
     const HeaderLeftIcon = () => (isMobileNavVisible
         ? <CancelIcon className={styles.cancelIcon} />
         : <MenuIcon className={styles.menuIcon} />
@@ -43,14 +48,24 @@ const Header = () => {
                     <button disabled type="button" className={`${styles.button} ${styles.user}`}>
                         <UserIcon className={styles.userIcon} />
                     </button>
-                    <button disabled type="button" className={styles.button}>
-                        <BagIcon className={styles.bag} />
+                    <button
+                        type="button"
+                        onClick={showCart}
+                        className={`${styles.button} ${styles.bag}`}
+                    >
+                        <BagIcon className={styles.bagIcon} />
+                        {hasItems && <span className={styles.count}>{cartItemsLength}</span>}
                     </button>
                 </div>
             </header>
             {isMobileNavVisible && <MobileNav toggleNav={toggleNav} />}
         </section>
     );
+};
+
+Header.propTypes = {
+    cartItemsLength: PropTypes.number.isRequired,
+    setIsCartVisible: PropTypes.func.isRequired,
 };
 
 export default Header;

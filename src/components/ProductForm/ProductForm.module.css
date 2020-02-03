@@ -40,6 +40,7 @@
     min-height: 44px;
     font-size: 2.4rem;
     font-weight: 300;
+    outline: none;
 }
 
 .control:disabled {
@@ -65,14 +66,19 @@
     color: white;
     background-color: rgb(45, 45 ,45);
     user-select: none;
+    outline: none;
 }
 
 .submit:active {
     background-color: rgb(75, 75, 75);
 }
 
-.submit:focus {
-    outline: none;
+.submit:disabled {
+    background-color: rgb(153, 153, 153);
+}
+
+.submit:disabled:hover {
+    cursor: not-allowed;
 }
 
 @media (min-width: 676px) {

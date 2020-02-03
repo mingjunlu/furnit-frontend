@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import NotFoundPage from '../NotFoundPage/NotFoundPage';
@@ -8,7 +9,7 @@ import ProductForm from '../../components/ProductForm/ProductForm';
 import ProductInfo from '../../components/ProductInfo/ProductInfo';
 import styles from './ProductPage.module.css';
 
-const ProductPage = () => {
+const ProductPage = ({ cartItems, setCartItems, setIsCartVisible }) => {
     const { id } = useParams();
     const product = useFetch(`/api/products/${id}`, undefined, {});
 
@@ -31,13 +32,30 @@ const ProductPage = () => {
         <section className={styles.section}>
             <section className={styles.container}>
                 <ProductPreview images={product.images} />
-                <ProductForm product={product} />
+                <ProductForm
+                    product={product}
+                    cartItems={cartItems}
+                    setCartItems={setCartItems}
+                    setIsCartVisible={setIsCartVisible}
+                />
             </section>
             <section className={styles.container}>
                 <ProductInfo description={product.description} features={product.features} />
             </section>
         </section>
     );
+};
+
+ProductPage.propTypes = {
+    cartItems: PropTypes.arrayOf(PropTypes.exact({
+        _id: PropTypes.string,
+        name: PropTypes.string,
+        price: PropTypes.number,
+        image: PropTypes.string,
+        quantity: PropTypes.number,
+    })).isRequired,
+    setCartItems: PropTypes.func.isRequired,
+    setIsCartVisible: PropTypes.func.isRequired,
 };
 
 export default ProductPage;
