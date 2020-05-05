@@ -40,7 +40,11 @@ const ProductPage = ({ cartItems, setCartItems, setIsCartVisible }) => {
                 />
             </section>
             <section className={styles.container}>
-                <ProductInfo description={product.description} features={product.features} />
+                <ProductInfo
+                    description={product.description}
+                    features={product.features}
+                    dimensions={product.dimensions}
+                />
             </section>
         </section>
     );

@@ -84,6 +84,6 @@
 @media (min-width: 676px) {
     .container {
         margin-top: 0;
-        max-width: 360px;
+        width: 360px;
     }
 }
