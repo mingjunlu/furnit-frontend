@@ -5,6 +5,7 @@ import Cart from './components/Cart/Cart';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import HomePage from './pages/HomePage/HomePage';
+import LoginPage from './pages/LoginPage/LoginPage';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import ProductPage from './pages/ProductPage/ProductPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
@@ -27,6 +28,9 @@ const App = () => {
             <Switch>
                 <Route exact path="/">
                     <HomePage />
+                </Route>
+                <Route exact path="/login">
+                    <LoginPage />
                 </Route>
                 <Route exact path="/products">
                     <ProductsPage />
