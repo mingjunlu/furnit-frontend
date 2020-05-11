@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import styles from './LoginPage.module.css';
 
 const LoginPage = () => {
@@ -14,9 +14,11 @@ const LoginPage = () => {
         setPassword(event.target.value);
     };
 
+    const { state: locationState } = useLocation();
+    const history = useHistory();
+
     const [errorMessage, setErrorMessage] = useState('');
     const submitButtonElement = useRef(null);
-    const history = useHistory();
     const submitForm = async (event) => {
         event.preventDefault();
         submitButtonElement.current.disabled = true;
@@ -28,7 +30,8 @@ const LoginPage = () => {
             });
             const { success, message } = await response.json();
             if (!success) { throw new Error(message); }
-            history.push('/');
+            const { from } = locationState || { from: { pathname: '/' } };
+            history.replace(from);
         } catch (error) {
             submitButtonElement.current.disabled = false;
             setErrorMessage(error.message);

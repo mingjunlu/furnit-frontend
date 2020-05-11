@@ -45,9 +45,9 @@ const Header = ({ cartItemsLength, setIsCartVisible }) => {
                     <LogoIcon className={styles.logoIcon} />
                 </Link>
                 <div className={styles.buttons}>
-                    <button disabled type="button" className={`${styles.button} ${styles.user}`}>
+                    <Link to="/member" className={`${styles.button} ${styles.user}`}>
                         <UserIcon className={styles.userIcon} />
-                    </button>
+                    </Link>
                     <button
                         type="button"
                         onClick={showCart}
