@@ -5,9 +5,8 @@ import Loading from '../../components/Loading/Loading';
 import styles from './ProductsPage.module.css';
 
 const ProductsPage = () => {
-    const products = useFetch('/api/products', undefined, []);
-
-    if (products instanceof Error) {
+    const response = useFetch('/api/products');
+    if (response.success === false) {
         return (
             <section className={styles.container}>
                 <h2>Cannot get products</h2>
@@ -15,15 +14,15 @@ const ProductsPage = () => {
         );
     }
 
-    const isEmpty = (products.length === 0);
-    if (isEmpty) { return <Loading />; }
+    const isLoading = (Object.keys(response).length === 0);
+    if (isLoading) { return <Loading />; }
 
     return (
         <section className={styles.section}>
             <section className={styles.container}>
                 <h2 className={styles.heading}>Products</h2>
                 <div className={styles.products}>
-                    {products.map((product) => (
+                    {response.data.map((product) => (
                         <article key={product._id}>
                             <Link to={`/products/${product._id}`} className={styles.link}>
                                 <picture>

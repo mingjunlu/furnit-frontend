@@ -11,7 +11,7 @@ const ProductForm = (props) => {
     } = props;
 
     const isInCart = cartItems.find((item) => (item._id === product._id));
-    const [minimum, maximum] = [1, 10];
+    const [minimum, maximum] = [1, product.inStock];
     const [quantity, setQuantity] = useState(minimum);
     const hasReachedMinimum = (quantity === minimum);
     const hasReachedMaximum = (quantity === maximum);
@@ -98,6 +98,7 @@ ProductForm.propTypes = {
         }),
         releasedAt: PropTypes.number,
         salesVolume: PropTypes.number,
+        inStock: PropTypes.number,
     }).isRequired,
     cartItems: PropTypes.arrayOf(PropTypes.exact({
         _id: PropTypes.string,

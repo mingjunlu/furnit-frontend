@@ -1,29 +1,26 @@
 import { useState, useEffect } from 'react';
 
-const useFetch = (url, options, defaultState = null) => {
-    const [result, setResult] = useState(defaultState);
+const useFetch = (url, options) => {
+    const [result, setResult] = useState({});
 
     useEffect(() => {
         let isMounted = true;
 
         const fetchData = async () => {
-            let fetchedData;
+            let jsonResponse;
 
             try {
                 const response = await fetch(url, options);
-                const { success, message, data } = await response.json();
-                if (!success) {
-                    const customError = new Error(message);
-                    customError.code = response.status;
-                    throw customError;
-                }
-                fetchedData = data;
+                jsonResponse = await response.json();
             } catch (error) {
-                setResult(error);
+                setResult({
+                    success: false,
+                    message: error.message,
+                });
             }
 
-            if (isMounted && fetchedData) {
-                setResult(fetchedData);
+            if (isMounted && jsonResponse) {
+                setResult(jsonResponse);
             }
         };
         fetchData();

@@ -11,10 +11,10 @@ import styles from './ProductPage.module.css';
 
 const ProductPage = ({ cartItems, setCartItems, setIsCartVisible }) => {
     const { id } = useParams();
-    const product = useFetch(`/api/products/${id}`, undefined, {});
+    const response = useFetch(`/api/products/${id}`);
 
-    if (product instanceof Error) {
-        const hasNotFound = (product.code === 404);
+    if (response.success === false) {
+        const hasNotFound = (response.message === 'Product not found');
         if (hasNotFound) { return <NotFoundPage />; }
         return (
             <section className={styles.section}>
@@ -25,9 +25,10 @@ const ProductPage = ({ cartItems, setCartItems, setIsCartVisible }) => {
         );
     }
 
-    const isEmpty = (Object.keys(product).length === 0);
-    if (isEmpty) { return <Loading />; }
+    const isLoading = (Object.keys(response).length === 0);
+    if (isLoading) { return <Loading />; }
 
+    const product = response.data;
     return (
         <section className={styles.section}>
             <section className={styles.container}>

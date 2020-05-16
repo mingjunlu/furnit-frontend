@@ -4,9 +4,8 @@ import useFetch from '../../hooks/useFetch';
 import styles from './BestSellers.module.css';
 
 const BestSellers = () => {
-    const bestSellers = useFetch('/api/products?sort=salesVolume&limit=8', undefined, []);
-
-    if (bestSellers instanceof Error) {
+    const response = useFetch('/api/products?sort=salesVolume&limit=8');
+    if (response.success === false) {
         return (
             <section className={styles.section}>
                 <h2>Cannot get best-sellers</h2>
@@ -14,11 +13,14 @@ const BestSellers = () => {
         );
     }
 
+    const isLoading = (Object.keys(response).length === 0);
+    if (isLoading) { return null; }
+
     return (
         <section className={styles.section}>
             <h2 className={styles.heading}>Best-Sellers</h2>
             <div className={styles.products}>
-                {bestSellers.map((product) => (
+                {response.data.map((product) => (
                     <article key={product._id}>
                         <Link to={`/products/${product._id}`} className={styles.link}>
                             <picture>
