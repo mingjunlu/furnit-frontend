@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import styles from './LoginPage.module.css';
+import styles from './RegisterPage.module.css';
 
-const LoginPage = () => {
+const RegisterPage = () => {
     const [name, setName] = useState('');
     const updateName = (event) => {
         const textWithoutSpaces = event.target.value.trim();
@@ -23,7 +23,7 @@ const LoginPage = () => {
         event.preventDefault();
         submitButtonElement.current.disabled = true;
         try {
-            const response = await fetch('/api/users/login', {
+            const response = await fetch('/api/users', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, password }),
@@ -41,14 +41,15 @@ const LoginPage = () => {
     return (
         <section className={styles.section}>
             <form onSubmit={submitForm} className={styles.form}>
-                <h2 className={styles.heading}>Login</h2>
+                <h2 className={styles.heading}>Register</h2>
                 <p className={styles.message} style={{ color: errorMessage ? 'rgb(205, 0, 0)' : null }}>
-                    {errorMessage || 'Log in to your account'}
+                    {errorMessage || 'Create a new account'}
                 </p>
                 <label htmlFor="username" className={styles.label}>
                     <input
                         className={styles.input}
                         id="username"
+                        minLength={3}
                         onChange={updateName}
                         placeholder="Username"
                         required
@@ -60,6 +61,7 @@ const LoginPage = () => {
                     <input
                         className={styles.input}
                         id="password"
+                        minLength={8}
                         onChange={updatePassword}
                         placeholder="Password"
                         required
@@ -72,11 +74,11 @@ const LoginPage = () => {
                     ref={submitButtonElement}
                     type="submit"
                 >
-                    <>Log In</>
+                    <>Create Account</>
                 </button>
                 <p className={styles.message}>
-                    <>New to Furnit? </>
-                    <Link to="/register" className={styles.link}>Create an account</Link>
+                    <>Already have an account? </>
+                    <Link to="/login" className={styles.link}>Log in here</Link>
                     <>.</>
                 </p>
             </form>
@@ -84,4 +86,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default RegisterPage;

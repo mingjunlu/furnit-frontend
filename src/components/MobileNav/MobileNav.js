@@ -11,7 +11,7 @@ const MobileNav = ({ toggleNav }) => {
         { to: '/products', text: 'Products' },
         { to: '/blog', text: 'Blog' },
         { to: '/news', text: 'News' },
-        { to: '/login', text: 'Login' },
+        { to: '/member', text: 'Member' },
     ];
 
     return (

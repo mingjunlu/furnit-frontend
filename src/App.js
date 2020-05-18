@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Cart from './components/Cart/Cart';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import HomePage from './pages/HomePage/HomePage';
 import LoginPage from './pages/LoginPage/LoginPage';
+import RegisterPage from './pages/RegisterPage/RegisterPage';
 import MemberPage from './pages/MemberPage/MemberPage';
 import ProductsPage from './pages/ProductsPage/ProductsPage';
 import ProductPage from './pages/ProductPage/ProductPage';
@@ -34,9 +34,9 @@ const App = () => {
                 <Route exact path="/login">
                     <LoginPage />
                 </Route>
-                <PrivateRoute exact path="/member">
+                <Route exact path="/member">
                     <MemberPage />
-                </PrivateRoute>
+                </Route>
                 <Route exact path="/products">
                     <ProductsPage />
                 </Route>
@@ -46,6 +46,9 @@ const App = () => {
                         setCartItems={setCartItems}
                         setIsCartVisible={setIsCartVisible}
                     />
+                </Route>
+                <Route exact path="/register">
+                    <RegisterPage />
                 </Route>
                 <Route>
                     <NotFoundPage />
