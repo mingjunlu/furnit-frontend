@@ -5,28 +5,28 @@ import styles from './Banners.module.css';
 const Banners = () => {
     const banners = [
         {
-            href: '/products?category=1',
-            src: 'https://via.placeholder.com/800x422/e8e8e8/8e8e8e.png?text=Banner+01',
+            href: '/products?category=sofa',
+            src: 'https://via.placeholder.com/800x422/e8e8e8/8e8e8e.png?text=Sofas',
             className: `${styles.banner} ${styles.topLeft}`,
-            alt: 'Banner 01',
+            alt: 'Banner for Sofas',
         },
         {
-            href: '/products?category=2',
-            src: 'https://via.placeholder.com/800x422/e8e8e8/8e8e8e.png?text=Banner+02',
+            href: '/products?category=chair',
+            src: 'https://via.placeholder.com/422x422/e8e8e8/8e8e8e.png?text=Chairs',
             className: `${styles.banner} ${styles.topRight}`,
-            alt: 'Banner 02',
+            alt: 'Banner for Chairs',
         },
         {
-            href: '/products?category=3',
-            src: 'https://via.placeholder.com/800x422/e8e8e8/8e8e8e.png?text=Banner+03',
+            href: '/products?category=bookshelf',
+            src: 'https://via.placeholder.com/422x422/e8e8e8/8e8e8e.png?text=Bookshelves',
             className: `${styles.banner} ${styles.bottomLeft}`,
-            alt: 'Banner 03',
+            alt: 'Banner for Bookshelves',
         },
         {
-            href: '/products?category=4',
-            src: 'https://via.placeholder.com/800x422/e8e8e8/8e8e8e.png?text=Banner+04',
+            href: '/products?category=bed',
+            src: 'https://via.placeholder.com/800x422/e8e8e8/8e8e8e.png?text=Beds',
             className: `${styles.banner} ${styles.bottomRight}`,
-            alt: 'Banner 04',
+            alt: 'Banner for Beds',
         },
     ];
 
