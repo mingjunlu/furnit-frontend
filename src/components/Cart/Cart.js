@@ -69,9 +69,13 @@ const Cart = ({ cartItems, setCartItems, setIsCartVisible }) => {
                 <div className={styles.footer}>
                     <p className={styles.subtotal}>
                         <span>Subtotal:</span>
-                        <span className={styles.price}>{`$${subtotalPrice.toLocaleString()}`}</span>
+                        <span className={styles.price}>
+                            {`$${subtotalPrice.toLocaleString()}`}
+                        </span>
                     </p>
-                    <button type="button" className={styles.submit}>Checkout</button>
+                    <button disabled type="button" className={styles.submit}>
+                        <>Checkout (coming soon)</>
+                    </button>
                 </div>
             </form>
         </div>

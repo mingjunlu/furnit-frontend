@@ -83,10 +83,10 @@
     user-select: none;
 }
 
-.submit:active {
-    background-color: rgb(75, 75, 75);
+.submit:disabled {
+    background-color: rgb(153, 153, 153);
 }
 
-.submit:focus {
-    outline: none;
+.submit:disabled:hover {
+    cursor: not-allowed;
 }
