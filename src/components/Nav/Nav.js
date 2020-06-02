@@ -4,16 +4,20 @@ import styles from './Nav.module.css';
 
 const Nav = () => {
     const links = [
-        { to: '/', text: 'Home' },
-        { to: '/products', text: 'Products' },
-        { to: '/blog', text: 'Blog' },
-        { to: '/news', text: 'News' },
+        { to: '/', text: 'Home', isDisabled: false },
+        { to: '/products', text: 'Products', isDisabled: false },
+        { to: '/blog', text: 'Blog', isDisabled: true },
+        { to: '/news', text: 'News', isDisabled: true },
     ];
 
     return (
         <nav className={styles.nav}>
             <ul className={styles.navLinks}>
-                {links.map((link) => (
+                {links.map((link) => (link.isDisabled ? (
+                    <li className={styles.disabled} key={link.to}>
+                        {link.text}
+                    </li>
+                ) : (
                     <NavLink
                         exact
                         to={link.to}
@@ -23,7 +27,7 @@ const Nav = () => {
                     >
                         {link.text}
                     </NavLink>
-                ))}
+                )))}
             </ul>
         </nav>
     );

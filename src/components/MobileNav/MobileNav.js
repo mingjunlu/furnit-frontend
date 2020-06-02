@@ -5,19 +5,24 @@ import useScrollLock from '../../hooks/useScrollLock';
 import styles from './MobileNav.module.css';
 
 const MobileNav = ({ toggleNav }) => {
-    useScrollLock(); // Prevent scrolling
+    useScrollLock(); // Prevent scrolling]
+
     const links = [
-        { to: '/', text: 'Home' },
-        { to: '/products', text: 'Products' },
-        { to: '/blog', text: 'Blog' },
-        { to: '/news', text: 'News' },
-        { to: '/member', text: 'Member' },
+        { to: '/', text: 'Home', isDisabled: false },
+        { to: '/products', text: 'Products', isDisabled: false },
+        { to: '/blog', text: 'Blog', isDisabled: true },
+        { to: '/news', text: 'News', isDisabled: true },
+        { to: '/member', text: 'Member', isDisabled: false },
     ];
 
     return (
         <nav className={styles.nav}>
             <ul className={styles.navLinks}>
-                {links.map((link) => (
+                {links.map((link) => (link.isDisabled ? (
+                    <li className={styles.disabled} key={link.to}>
+                        {`${link.text} (coming soon)`}
+                    </li>
+                ) : (
                     <NavLink
                         exact
                         to={link.to}
@@ -28,7 +33,7 @@ const MobileNav = ({ toggleNav }) => {
                     >
                         {link.text}
                     </NavLink>
-                ))}
+                )))}
             </ul>
         </nav>
     );

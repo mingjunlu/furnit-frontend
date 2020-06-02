@@ -13,6 +13,16 @@
     margin: 0 auto;
 }
 
+.disabled {
+    display: block;
+    color: rgba(153, 153, 153, 0.5);
+    line-height: 44px;
+}
+
+.disabled:hover {
+    cursor: not-allowed;
+}
+
 .navLink {
     display: block;
     color: rgb(153, 153, 153);
