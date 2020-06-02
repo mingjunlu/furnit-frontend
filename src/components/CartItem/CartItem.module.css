@@ -1,12 +1,14 @@
 .container {
     display: flex;
     align-items: center;
+    margin-bottom: 0.8rem;
 }
 
 .picture {
     display: block;
     width: 6.0rem;
     height: 6.0rem;
+    flex-shrink: 0;
 }
 
 .img {
@@ -16,12 +18,16 @@
 
 .info {
     margin-left: 1.0rem;
+    min-width: 0rem;
 }
 
 .name {
     font-size: 1.4rem;
     line-height: 1.2;
     color: rgb(45, 45, 45);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .quantity {
