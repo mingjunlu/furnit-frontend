@@ -4,7 +4,7 @@
 
 .button {
     display: inline-block;
-    margin-bottom: 0.8rem;
+    margin-bottom: var(--s-minus);
     outline: none;
     opacity: 0.4;
     width: 50px;
@@ -37,18 +37,18 @@
 }
 
 .arrowLeft {
-    left: 0.4rem;
+    left: var(--xs-size);
 }
 
 .arrowRight {
-    right: 0.4rem;
+    right: var(--xs-size);
 }
 
 .arrowIcon {
-    width: 2.0rem;
+    width: var(--m-plus);
     margin: 0 auto;
     display: block;
-    fill: rgb(153, 153, 153);
+    fill: var(--gray);
 }
 
 .arrow:disabled:hover {
@@ -74,7 +74,7 @@
     .picture {
         display: block;
         max-width: 480px;
-        padding: 0 2.0rem;
+        padding: 0 var(--m-plus);
         margin-right: auto;
     }
 

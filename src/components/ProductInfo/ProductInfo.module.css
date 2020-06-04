@@ -1,12 +1,12 @@
 .section {
-    margin-top: 2.0rem;
+    margin-top: var(--m-plus);
 }
 
 .description {
-    margin-bottom: 2.0rem;
+    margin-bottom: var(--m-plus);
 }
 
 .features {
     list-style-type: disc;
-    padding-left: 2.0rem;
+    padding-left: var(--m-plus);
 }

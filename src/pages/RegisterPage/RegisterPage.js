@@ -42,7 +42,7 @@ const RegisterPage = () => {
         <section className={styles.section}>
             <form onSubmit={submitForm} className={styles.form}>
                 <h2 className={styles.heading}>Register</h2>
-                <p className={styles.message} style={{ color: errorMessage ? 'rgb(205, 0, 0)' : null }}>
+                <p className={styles.message} style={{ color: errorMessage ? 'var(--red)' : null }}>
                     {errorMessage || 'Create a new account'}
                 </p>
                 <label htmlFor="username" className={styles.label}>

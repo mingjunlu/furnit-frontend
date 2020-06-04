@@ -1,3 +1,22 @@
+:root {
+    /* Colors */
+    --black: rgb(45, 45, 45);
+    --gray: rgb(153, 153, 153);
+    --red: rgb(205, 0, 0);
+    --white: rgb(240, 240, 240);
+
+    /* Sizes */
+    --xl-size: 4.0rem;
+    --l-size: 2.4rem;
+    --m-plus: 2.0rem;
+    --m-size: 1.6rem;
+    --m-minus: 1.4rem;
+    --s-plus: 1.2rem;
+    --s-size: 1.0rem;
+    --s-minus: 0.8rem;
+    --xs-size: 0.4rem;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -16,7 +35,7 @@ body {
         "Apple Color Emoji",
         "Segoe UI Emoji",
         "Segoe UI Symbol";
-    font-size: 1.6rem;
+    font-size: var(--m-size);
     font-weight: 400;
     line-height: 1.6;
 }

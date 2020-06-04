@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem;
+    padding: var(--s-minus);
     max-width: 1024px;
     margin: 0 auto;
 }
@@ -28,13 +28,13 @@
 }
 
 .menuIcon {
-    width: 2.0rem;
+    width: var(--m-plus);
     position: relative;
     top: 0.25rem;
 }
 
 .cancelIcon {
-    width: 1.4rem;
+    width: var(--m-minus);
     position: relative;
     top: 0.25rem;
 }
@@ -67,17 +67,17 @@
 
 .count {
     display: inline-block;
-    font-size: 1.0rem;
-    line-height: 2.0rem;
+    font-size: var(--s-size);
+    line-height: var(--m-plus);
     border-radius: 50%;
-    width: 2.0rem;
-    height: 2.0rem;
+    width: var(--m-plus);
+    height: var(--m-plus);
     transform: scale(0.75);
     color: white;
-    background-color: rgb(205, 0, 0);
+    background-color: var(--red);
     position: absolute;
     right: 0.2rem;
-    bottom: 0.4rem;
+    bottom: var(--xs-size);
 }
 
 @media (min-width: 1024px) {

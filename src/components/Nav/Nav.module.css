@@ -11,13 +11,13 @@
 
 .navLink {
     display: block;
-    color: rgb(153, 153, 153);
+    color: var(--gray);
     line-height: 44px;
     min-width: 44px;
-    padding: 0 1.2rem;
+    padding: 0 var(--s-plus);
     font-weight: 300;
     position: relative;
-    top: 0.4rem;
+    top: var(--xs-size);
 }
 
 .navLink:hover {
@@ -30,13 +30,13 @@
 
 .disabled {
     display: block;
-    color: rgb(153, 153, 153);
+    color: var(--gray);
     line-height: 44px;
     min-width: 44px;
-    padding: 0 1.2rem;
+    padding: 0 var(--s-plus);
     font-weight: 300;
     position: relative;
-    top: 0.4rem;
+    top: var(--xs-size);
 }
 
 .disabled:hover {

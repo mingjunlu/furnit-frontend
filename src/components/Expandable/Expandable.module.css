@@ -1,6 +1,6 @@
 .container {
-    color: rgb(45, 45 ,45);
-    font-size: 1.4rem;
+    color: var(--black);
+    font-size: var(--m-minus);
 }
 
 .button {
@@ -16,12 +16,12 @@
 }
 
 .title {
-    font-size: 2.0rem;
+    font-size: var(--m-plus);
     font-weight: 300;
 }
 
 .icon {
-    width: 1.2rem;
+    width: var(--s-plus);
 }
 
 .content {
@@ -30,7 +30,7 @@
 
 @media (min-width: 676px) {
     .container {
-        margin-top: 4.0rem;
+        margin-top: var(--xl-size);
     }
 
     .button:hover {

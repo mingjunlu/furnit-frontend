@@ -1,11 +1,11 @@
 .section {
     max-width: 1024px;
     margin: 0 auto;
-    padding: 2.0rem;
+    padding: var(--m-plus);
 }
 
 .heading {
-    font-size: 2.4rem;
+    font-size: var(--l-size);
     text-align: center;
     font-weight: 300;
     line-height: 4.0;
@@ -13,7 +13,7 @@
 
 .products {
     display: grid;
-    grid-gap: 2.0rem;
+    grid-gap: var(--m-plus);
     grid-template-columns: repeat(2, 1fr);
 }
 
@@ -27,14 +27,14 @@
 }
 
 .name {
-    font-size: 1.2rem;
-    margin-top: 0.8rem;
+    font-size: var(--s-plus);
+    margin-top: var(--s-minus);
 }
 
 .price {
-    font-size: 1.2rem;
-    color: rgb(175, 175, 175);
-    margin-bottom: 0.4rem;
+    font-size: var(--s-plus);
+    color: var(--gray);
+    margin-bottom: var(--xs-size);
 }
 
 @media (min-width: 676px) {

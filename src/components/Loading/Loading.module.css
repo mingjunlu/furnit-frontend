@@ -1,5 +1,5 @@
 @keyframes petalFade {
-    from { background-color: rgb(153, 153, 153); }
+    from { background-color: var(--gray); }
     to { background-color: transparent; }
 }
 
@@ -11,7 +11,7 @@
 }
 
 .spinner {
-    font-size: 2.4rem;
+    font-size: var(--l-size);
     position: relative;
     display: inline-block;
     width: 1em;

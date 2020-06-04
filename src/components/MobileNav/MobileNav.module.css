@@ -2,7 +2,7 @@
     min-height: 100vh;
     background-color: white;
     position: absolute;
-    top: calc(44px + 0.8rem * 2);
+    top: calc(44px + var(--s-minus) * 2);
     right: 0;
     left: 0;
 }
@@ -25,7 +25,7 @@
 
 .navLink {
     display: block;
-    color: rgb(153, 153, 153);
+    color: var(--gray);
     line-height: 44px;
 }
 

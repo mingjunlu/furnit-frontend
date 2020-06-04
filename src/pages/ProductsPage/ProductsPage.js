@@ -35,7 +35,7 @@ const ProductsPage = () => {
             <section className={styles.section}>
                 <section className={styles.container}>
                     <h2 className={styles.heading}>Products</h2>
-                    <p style={{ fontSize: '2.0rem', textAlign: 'center' }}>No results found.</p>
+                    <p style={{ fontSize: 'var(--m-plus)', textAlign: 'center' }}>No results found.</p>
                 </section>
             </section>
         );

@@ -1,9 +1,9 @@
 .banners {
     max-width: 1024px;
     margin: 0 auto;
-    padding: 2.0rem;
+    padding: var(--m-plus);
     display: grid;
-    grid-gap: 2.0rem;
+    grid-gap: var(--m-plus);
 }
 
 .banner {
@@ -17,7 +17,7 @@
 
 @media (min-width: 676px) {
     .banners {
-        grid-gap: 1.0rem;
+        grid-gap: var(--s-size);
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas: 
         "topLeft    topLeft     topRight"

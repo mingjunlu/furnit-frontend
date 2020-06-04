@@ -8,7 +8,7 @@
 .container {
     max-width: 1024px;
     margin: 0 auto;
-    padding: 2.0rem;
+    padding: var(--m-plus);
 }
 
 .iconWrapper {
@@ -21,20 +21,20 @@
 }
 
 .heading {
-    font-size: 2.4rem;
+    font-size: var(--l-size);
     letter-spacing: 0.1rem;
     font-weight: 300;
     text-align: center;
-    margin-top: 0.4rem;
+    margin-top: var(--xs-size);
 }
 
 .message {
-    color: rgb(153, 153, 153);
-    font-size: 1.4rem;
-    margin-top: 2.4rem;
+    color: var(--gray);
+    font-size: var(--m-minus);
+    margin-top: var(--l-size);
 }
 
 .link {
-    color: rgb(205, 0, 0);
+    color: var(--red);
     text-decoration: underline;
 }

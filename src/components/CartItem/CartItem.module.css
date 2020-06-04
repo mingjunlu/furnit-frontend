@@ -1,7 +1,7 @@
 .container {
     display: flex;
     align-items: center;
-    margin-bottom: 0.8rem;
+    margin-bottom: var(--s-minus);
 }
 
 .picture {
@@ -17,29 +17,29 @@
 }
 
 .info {
-    margin-left: 1.0rem;
+    margin-left: var(--s-size);
     min-width: 0rem;
 }
 
 .name {
-    font-size: 1.4rem;
+    font-size: var(--m-minus);
     line-height: 1.2;
-    color: rgb(45, 45, 45);
+    color: var(--black);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .quantity {
-    color: rgb(153, 153, 153);
-    font-size: 1.2rem;
+    color: var(--gray);
+    font-size: var(--s-plus);
     position: relative;
-    top: 0.4rem;
+    top: var(--xs-size);
 }
 
 .price {
-    color: rgb(205, 0, 0);
-    font-size: 1.2rem;
+    color: var(--red);
+    font-size: var(--s-plus);
 }
 
 .button {
@@ -48,11 +48,11 @@
     outline: none;
     align-self: flex-start;
     position: relative;
-    bottom: 1.0rem;
-    left: 1.2rem;
+    bottom: var(--s-size);
+    left: var(--s-plus);
     margin-left: auto;
 }
 
 .icon {
-    width: 1.4rem;
+    width: var(--m-minus);
 }

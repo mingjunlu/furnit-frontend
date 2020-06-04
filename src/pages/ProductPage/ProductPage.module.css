@@ -4,7 +4,7 @@
 
 .container {
     max-width: 1024px;
-    padding: 2.0rem;
+    padding: var(--m-plus);
     margin: 0 auto;
 }
 

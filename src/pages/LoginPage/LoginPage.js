@@ -42,7 +42,7 @@ const LoginPage = () => {
         <section className={styles.section}>
             <form onSubmit={submitForm} className={styles.form}>
                 <h2 className={styles.heading}>Login</h2>
-                <p className={styles.message} style={{ color: errorMessage ? 'rgb(205, 0, 0)' : null }}>
+                <p className={styles.message} style={{ color: errorMessage ? 'var(--red)' : null }}>
                     {errorMessage || 'Log in to your account'}
                 </p>
                 <label htmlFor="username" className={styles.label}>
